@@ -1,0 +1,6 @@
+{
+    "name": "utexas/utdk_localdev",
+    "description": "The local development environment for UTDK.",
+    "type": "library",
+    "require": {}
+}
