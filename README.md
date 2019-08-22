@@ -40,3 +40,6 @@ Test steps:
 ![image](https://media.github.austin.utexas.edu/user/68/files/3fc12580-6cd4-11e9-9ecc-98090c974553)
 * When you refresh the site in a spot where that code executes, it should jump you into vscode
 ![image](https://media.github.austin.utexas.edu/user/68/files/7e56e000-6cd4-11e9-90f0-58c9ac48b006)
+
+# Note on composer.json requirements
+* Due to a current limitation with our composer scaffolding, any package that is not the root package will not have it's `require-dev` dependencies installed. Because we use the utexas_profile as a package, the `require-dev` packages defined there won't be installed, since the `utexas_profile` is not the *root* package. That is why we duplicate them in this repo as *`requirements`*, so that when this package is installed, it takes care of properly installing dependencies for testing and other dev specific activities.
