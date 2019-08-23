@@ -36,9 +36,6 @@ init_settings ()
 	# Copy from settings templates
 	copy_settings_file "${PROJECT_ROOT}/.docksal/drupal/default.settings.php" "${SITEDIR_PATH}/settings.php"
 	copy_settings_file "${PROJECT_ROOT}/.docksal/drupal/default.settings.local.php" "${SITEDIR_PATH}/settings.local.php"
-	# Create folder for simpletest snapshots
-	create_dir "${PROJECT_ROOT}/${DOCROOT}/sites/simpletest"
-	create_dir "${PROJECT_ROOT}/${DOCROOT}/sites/simpletest/browser_output"
 }
 
 # Install site
