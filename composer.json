@@ -8,6 +8,7 @@
         "behat/mink-extension": "^2.2",
         "behat/mink-goutte-driver": "^1.2",
         "behat/mink-selenium2-driver": "1.4.x-dev",
+        "composer/installers": "^1.0.20",
         "drupal/coder": "^8.3",
         "drupal/console": "1.2.0",
         "drupal/devel": "^1.0",
