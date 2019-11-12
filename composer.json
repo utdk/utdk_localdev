@@ -18,6 +18,7 @@
         "drupal/restui": "^1.0",
         "drupal/schema_metatag": "^1.0",
         "drush-ops/behat-drush-endpoint": "^0.0.4",
+        "friendsoftwig/twigcs": "^3.2",
         "jcalderonzumba/gastonjs": "^1.0.2",
         "jcalderonzumba/mink-phantomjs-driver": "^0.3.1",
         "mglaman/phpstan-drupal": "0.11.4",
