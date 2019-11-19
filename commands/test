@@ -26,7 +26,7 @@
 
 now=$(date)
 echo "Starting PHPUnit at $now"
-/var/www/vendor/bin/phpunit \
+/var/www/vendor/bin/paratest -p4 \
   -c /var/www/.docksal/drupal/testing/phpunit.xml \
   --testsuite=functional,unit,kernel \
   --stop-on-failure \
