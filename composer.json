@@ -3,6 +3,7 @@
     "description": "The local development environment for UTDK.",
     "type": "utexas-development",
     "require": {
+        "brianium/paratest": "^3.1",
         "behat/behat": "3.*",
         "behat/mink": "^1.7",
         "behat/mink-extension": "^2.2",
@@ -26,8 +27,8 @@
         "phpspec/prophecy": "^1.4",
         "phpstan/phpstan": "0.11.4",
         "phpstan/phpstan-deprecation-rules": "^0.11.1",
-        "phpunit/php-code-coverage": "^5.3",
-        "phpunit/phpunit": "^4.8.35 || ^6.5",
+        "phpunit/php-code-coverage": "^6.0",
+        "phpunit/phpunit": "^7.0",
         "squizlabs/php_codesniffer": "3.*",
         "symfony/css-selector": "^3.4.0",
         "symfony/debug": "^3.4.0",
