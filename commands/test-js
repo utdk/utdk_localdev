@@ -27,9 +27,10 @@
 now=$(date)
 echo "Starting JS PHPUnit at $now"
 /var/www/vendor/bin/paratest -p4 \
+  --bootstrap /var/www/web/core/tests/bootstrap.php \
   -c /var/www/.docksal/drupal/testing/phpunit-js.xml \
   --testsuite=functional-javascript \
   --stop-on-failure \
-  --verbose \
-  --debug \
+  --stop-on-failure \
+  --verbose=4 \
   $1 $2
