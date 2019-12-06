@@ -6,13 +6,13 @@
 # Configure the testing directories.
 
 # Copy over defaults
-cp -r ./.docksal/drupal/testing-defaults ./.docksal/drupal/testing 
+cp -r ./.docksal/drupal/testing-defaults ./.docksal/drupal/testing
 
 # Create folder for simpletest snapshots
 create_dir "${PROJECT_ROOT}/${DOCROOT}/sites/simpletest"
 create_dir "${PROJECT_ROOT}/${DOCROOT}/sites/simpletest/browser_output"
 
-# This command is meant as a helper to replace "http://web" in the PHPUnit testing files to whatever 
+# This command is meant as a helper to replace "http://web" in the PHPUnit testing files to whatever
 # the actual host name is being used. This makes for easier analysis of test results.
 
 perl -pi -e "s/http:\/\/web/http:\/\/${VIRTUAL_HOST}/g" ./.docksal/drupal/testing/phpunit.xml

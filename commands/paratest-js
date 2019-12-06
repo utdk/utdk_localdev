@@ -1,41 +1,33 @@
 #!/usr/bin/env bash
 
-# The 'test' command specifies which PHPUnit configuration defaults to use,
+# The 'paratest-js' command specifies which PHPUnit configuration defaults to use,
 # to print verbose output, and to stop if there is a failure.
 ## fin test can be used with any available PHPUnit parameters
 
-# fin test web/modules/custom
+# fin paratest-js web/profiles/utexas/tests/src/FunctionalJavascript
 # will run all tests found in the given directory
 
-# fin test --filter=Office403Test
+# fin paratest-js --filter=Office403Test
 # will run test(s) with the class name "Office403Test"
-
-# fin test --group utexas
-# will run all tests with the "utexas" docblock group annotation
-
-# fin test --list-groups
-# will list the available test groups
-
-# fin test --coverage-html /tmp/report
-# Will output a test coverage report (based on the @covers annotation
-# for PHP classes within the web/modules/custom
 
 # The following indicates that this command should be run within the docksal
 # cli rather than the host. See https://docs.docksal.io/fin/custom-commands/#executing-commands-inside-cli
 #: exec_target = cli
 
 now="$(TZ='America/Chicago' date)"
-echo "*******************************************************"
+echo "***********************************************************"
 echo "Starting FunctionalJS tests on $now"
 echo "If this fails immediately:"
 echo "- Did you install the site?"
 echo "- Have you run 'fin test-init'?"
 echo "- Are you testing *FunctionalJS* tests?"
-echo "*******************************************************"
-/var/www/vendor/bin/phpunit \
+echo "If you get random failures, run the slower 'test-js'"
+echo "***********************************************************"
+/var/www/vendor/bin/paratest -p2 \
+  --bootstrap /var/www/web/core/tests/bootstrap.php \
   -c /var/www/.docksal/drupal/testing/phpunit-js.xml \
   --testsuite=functional-javascript \
   --stop-on-failure \
-  --verbose \
-  --debug \
-  $1 $2
+  --stop-on-failure \
+  --verbose=4 \
+  $1

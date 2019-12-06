@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# The 'run-tests' command runs all defined UTexas tests.
+
+# The following indicates that this command should be run within the docksal
+# cli rather than the host. See https://docs.docksal.io/fin/custom-commands/#executing-commands-inside-cli
+#: exec_target = cli
+
+now="$(TZ='America/Chicago' date)"
+echo "********************************************************"
+echo "Running all UTexas tests on $now"
+echo "If this fails immediately, check that you have"
+echo "installed the site & run 'fin test-init'"
+echo "********************************************************"
+/var/www/vendor/bin/paratest -p2 \
+  --bootstrap /var/www/web/core/tests/bootstrap.php \
+  -c /var/www/.docksal/drupal/testing/phpunit.xml \
+  --stop-on-failure \
+  --verbose=1 \
+  /var/www/web/profiles/utexas/tests/src/Functional
+/var/www/vendor/bin/paratest -p2 \
+  --bootstrap /var/www/web/core/tests/bootstrap.php \
+  -c /var/www/.docksal/drupal/testing/phpunit-js.xml \
+  --stop-on-failure \
+  --verbose=1 \
+  /var/www/web/profiles/utexas/tests/src/FunctionalJavascript
