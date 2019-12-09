@@ -2,15 +2,22 @@
 
 ## Getting started
 * Make sure you have [Docksal installed](https://docs.docksal.io/getting-started/setup/)
-* From the root of where you have cloned the repo, run `fin init`. This will spin up the stack.
-* You'll need to next install composer dependencies for the project. The easiest way to do this, along with configuring the standard development environment git hooks and coding standards checks, is with `setup.sh` - Simply run `bash setup.sh`
+* Make sure you have PHP 7.2 as your active native php-cli version. If using a Mac with Homebrew, you can add PHP7.2 by running `brew install php72 && brew install php72-xdebug`, and then adding the following line to your `~/.bash_profile` file: `export PATH="$(brew --prefix php@7.2)/bin:$PATH"`
+* In a repository that has the UTexas WCMS Artifactory endpoint defined (such as [utdk_profile](https://github.austin.utexas.edu/eis1-wcs/utdk_profile)), run `composer require utexas/utdk_localdev:dev-master`
+* From the root of where you have cloned the repo, run `fin init`. This will initiate the containers.
 * You can then use `fin init-site` to install Drupal.
 * If you need to re-install the site, run `fin init-site` as needed without restarting the stack or re-running any of `setup.sh`.
 * You can run `fin uli` to do a `drush uli` with the appropriate URI automatically piped in to give you a valid link for admin login.
 
 ## Running tests
 * For first time setup, run `fin test-init`. This will copy over the default files from the `.docksal/drupal/testing-defaults` folder, and update them to match your current Docksal virtual host.
-* There are 2 commands to run testing - `test`, for functional testing, and `test-js`, for Javascript based testing. More details on the commands can be found in the command files themselves - `.docksal/commands/test` and `.docksal/commands/test-js`. They both function largely the same way, but are configured to use corresponding `phpunit.xml` files located in `.docksal/drupal/testing` folder.
+* There are 5 commands to run testing:
+  - `run-tests`: run the entire UTexas suite of tests using parallel testing
+  - `test <directory/file>`: run PHPUnit Functional tests in series, using standard PHP command parameters
+  - `test-js <directory/file>`: run PHPUnit FunctionalJS tests in series, using standard PHP command parameters
+  - `paratest-functional <directory/file>`: run PHPUnit Functional tests in parallel, using standard PHP command parameters
+  - `paratest-js <directory/file>`: run PHPUnit FunctionalJS tests in parallel, using standard PHP command parameters 
+* More details on the commands can be found in the command files themselves - `.docksal/commands/test` and `.docksal/commands/test-js`. They both function largely the same way, but are configured to use corresponding `phpunit.xml` files located in `.docksal/drupal/testing` folder.
 * To ensure proper functionality, the `SIMPLETEST_BASE_URL` has to be updated to match the Docksal virtual host name. In most cases, this is taken care of when running `fin test-init`. As part of this command, it will update the appropriate `phpunit.xml` files automatically. This does a basic find and replace operation via perl, replacing the default `web` string with the Docksal variable `${VIRTUAL_HOST}`.
 * If the command doesn't work for you for some reason, you can manually update the `SIMPLETEST_BASE_URL` in the included `phpunit.xml` and `phpunit-js.xml`, located in `.docksal/drupal/testing/`. In Docksal, the name of your host matches the name of your folder. So, if you cloned this into a folder called `drupalin`, your Docksal based URL will be `http://drupalin.docksal`, and this is what your `SIMPLETEST_BASE_URL` should be set to.
 
