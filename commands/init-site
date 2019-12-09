@@ -34,7 +34,6 @@ fix_permissions ()
 check_email ()
 {
   if [ -n "$source" ]; then
-    echo $source
     if [ $source = "--wcs" ]; then
         email="wcs-drupal-site-admins@utlists.utexas.edu"
     fi
@@ -77,5 +76,4 @@ source="$1"
 check_email
 fix_permissions
 init_settings
-site_install
-#-------------------------- END: Execution --------------------------------
+time site_install
