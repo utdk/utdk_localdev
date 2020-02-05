@@ -68,8 +68,6 @@
       <directory>/var/www/web/core/modules</directory>
       <directory>/var/www/web/modules</directory>
       <directory>/var/www/web/sites</directory>
-      <!-- Exclude all test modules, tests etc -->
-      <exclude-pattern>*/tests/*</exclude-pattern>
      </whitelist>
   </filter>
 </phpunit>
