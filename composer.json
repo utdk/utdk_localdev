@@ -2,13 +2,23 @@
     "name": "utexas/utdk_localdev",
     "description": "The local development environment for UTDK.",
     "type": "utexas-development",
+    "repositories": {
+        "drupal": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        "utexas": {
+            "type": "composer",
+            "url": "https://artifacts.austin.utexas.edu/eis1-wcms"
+        }
+    },
     "require": {
-        "brianium/paratest": "^3.1",
         "behat/behat": "3.*",
         "behat/mink": "^1.7",
         "behat/mink-extension": "^2.2",
         "behat/mink-goutte-driver": "^1.2",
         "behat/mink-selenium2-driver": "1.4.x-dev",
+        "brianium/paratest": "^3.1",
         "composer/installers": "^1.0.20",
         "drupal/coder": "^8.3",
         "drupal/console": "1.2.0",
@@ -18,15 +28,15 @@
         "drupal/page_manager": "^4.0",
         "drupal/restui": "^1.0",
         "drupal/schema_metatag": "^1.0",
+        "drupal/upgrade_rector": "^1.0@alpha",
         "drush-ops/behat-drush-endpoint": "^0.0.4",
         "friendsoftwig/twigcs": "^3.2",
         "jcalderonzumba/gastonjs": "^1.0.2",
         "jcalderonzumba/mink-phantomjs-driver": "^0.3.1",
-        "mglaman/phpstan-drupal": "0.11.4",
+        "mglaman/phpstan-drupal": "^0.12.3",
         "mikey179/vfsstream": "^1.2",
         "phpspec/prophecy": "^1.4",
-        "phpstan/phpstan": "0.11.4",
-        "phpstan/phpstan-deprecation-rules": "^0.11.1",
+        "phpstan/phpstan-deprecation-rules": "^0.12.2",
         "phpunit/php-code-coverage": "^6.0",
         "phpunit/phpunit": "^7.0",
         "squizlabs/php_codesniffer": "3.*",
@@ -34,6 +44,8 @@
         "symfony/debug": "^3.4.0",
         "symfony/phpunit-bridge": "^3.4.3"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "config": {
         "sort-packages": true
     }
