@@ -34,7 +34,7 @@
         "jcalderonzumba/mink-phantomjs-driver": "^0.3.1",
         "mglaman/phpstan-drupal": "^0.12.3",
         "mikey179/vfsstream": "^1.2",
-        "palantirnet/drupal-rector": "^0.4.0",
+        "palantirnet/drupal-rector": "dev-master",
         "phpspec/prophecy": "^1.4",
         "phpstan/phpstan-deprecation-rules": "^0.12.2",
         "phpunit/php-code-coverage": "^6.0",
