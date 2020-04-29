@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "018159ff45460148b260bb4c70c6700e",
+    "content-hash": "10d821062a2e625bf212db95bc465698",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4258,21 +4258,24 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/palantirnet/drupal-rector.git",
-                "reference": "93a53b122279cdf6d2acef7d39ca9d30ae2e6dcb"
+                "reference": "4c495ba6264d3364062d819a5baa1b1fef3e76db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/drupal-rector/zipball/93a53b122279cdf6d2acef7d39ca9d30ae2e6dcb",
-                "reference": "93a53b122279cdf6d2acef7d39ca9d30ae2e6dcb",
+                "url": "https://api.github.com/repos/palantirnet/drupal-rector/zipball/4c495ba6264d3364062d819a5baa1b1fef3e76db",
+                "reference": "4c495ba6264d3364062d819a5baa1b1fef3e76db",
                 "shasum": ""
             },
             "require": {
                 "jawira/case-converter": "^1.1",
-                "rector/rector-prefixed": "^0.7.16"
+                "rector/rector-prefixed": "<0.7.19"
             },
             "replace": {
                 "drupal8-rector/drupal8-rector": "*",
                 "palantirnet/drupal8-rector": "*"
+            },
+            "require-dev": {
+                "behat/behat": "^3.6"
             },
             "type": "library",
             "autoload": {
@@ -4306,7 +4309,7 @@
                 "drupal 9",
                 "rector"
             ],
-            "time": "2020-04-22T16:39:35+00:00"
+            "time": "2020-04-28T19:06:47+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -9221,7 +9224,269 @@
             "time": "2018-08-28T21:34:05+00:00"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "composer/xdebug-handler",
+            "version": "1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/xdebug-handler.git",
+                "reference": "1ab9842d69e64fb3a01be6b656501032d1b78cb7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/1ab9842d69e64fb3a01be6b656501032d1b78cb7",
+                "reference": "1ab9842d69e64fb3a01be6b656501032d1b78cb7",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.2 || ^7.0 || ^8.0",
+                "psr/log": "^1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || 6.5 - 8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Composer\\XdebugHandler\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "John Stevenson",
+                    "email": "john-stevenson@blueyonder.co.uk"
+                }
+            ],
+            "description": "Restarts a process without Xdebug.",
+            "keywords": [
+                "Xdebug",
+                "performance"
+            ],
+            "time": "2020-03-01T12:26:26+00:00"
+        },
+        {
+            "name": "jean85/pretty-package-versions",
+            "version": "1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Jean85/pretty-package-versions.git",
+                "reference": "75c7effcf3f77501d0e0caa75111aff4daa0dd48"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Jean85/pretty-package-versions/zipball/75c7effcf3f77501d0e0caa75111aff4daa0dd48",
+                "reference": "75c7effcf3f77501d0e0caa75111aff4daa0dd48",
+                "shasum": ""
+            },
+            "require": {
+                "ocramius/package-versions": "^1.2.0",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jean85\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alessandro Lai",
+                    "email": "alessandro.lai85@gmail.com"
+                }
+            ],
+            "description": "A wrapper for ocramius/package-versions to get pretty versions strings",
+            "keywords": [
+                "composer",
+                "package",
+                "release",
+                "versions"
+            ],
+            "time": "2018-06-13T13:22:40+00:00"
+        },
+        {
+            "name": "mglaman/drupal-check",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mglaman/drupal-check.git",
+                "reference": "3ec4b60f86caa6fabd8067726908afd66ee3ec01"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mglaman/drupal-check/zipball/3ec4b60f86caa6fabd8067726908afd66ee3ec01",
+                "reference": "3ec4b60f86caa6fabd8067726908afd66ee3ec01",
+                "shasum": ""
+            },
+            "require": {
+                "composer/xdebug-handler": "^1.3",
+                "jean85/pretty-package-versions": "^1.2",
+                "mglaman/phpstan-drupal": "^0.12",
+                "nette/neon": "^3.1",
+                "php": "~7.2",
+                "phpstan/phpstan": "^0.12",
+                "phpstan/phpstan-deprecation-rules": "^0.12",
+                "symfony/console": "~3.2 || ~4.0",
+                "symfony/process": "~3.2 || ~4.0",
+                "webflo/drupal-finder": "^1.1"
+            },
+            "conflict": {
+                "ocramius/package-versions": ">=1.5"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "^3.4"
+            },
+            "bin": [
+                "drupal-check"
+            ],
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "DrupalCheck\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Glaman",
+                    "email": "nmd.matt@gmail.com"
+                }
+            ],
+            "description": "CLI tool for running checks on a Drupal code base",
+            "time": "2020-02-27T03:18:28+00:00"
+        },
+        {
+            "name": "nette/neon",
+            "version": "v3.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nette/neon.git",
+                "reference": "3c3dcbc6bf6c80dc97b1fc4ba9a22ae67930fc0e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nette/neon/zipball/3c3dcbc6bf6c80dc97b1fc4ba9a22ae67930fc0e",
+                "reference": "3c3dcbc6bf6c80dc97b1fc4ba9a22ae67930fc0e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-iconv": "*",
+                "ext-json": "*",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "nette/tester": "^2.0",
+                "phpstan/phpstan": "^0.12",
+                "tracy/tracy": "^2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause",
+                "GPL-2.0-only",
+                "GPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "David Grudl",
+                    "homepage": "https://davidgrudl.com"
+                },
+                {
+                    "name": "Nette Community",
+                    "homepage": "https://nette.org/contributors"
+                }
+            ],
+            "description": "🍸 Nette NEON: encodes and decodes NEON file format.",
+            "homepage": "https://ne-on.org",
+            "keywords": [
+                "export",
+                "import",
+                "neon",
+                "nette",
+                "yaml"
+            ],
+            "time": "2020-03-04T11:47:04+00:00"
+        },
+        {
+            "name": "ocramius/package-versions",
+            "version": "1.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Ocramius/PackageVersions.git",
+                "reference": "44af6f3a2e2e04f2af46bcb302ad9600cba41c7d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Ocramius/PackageVersions/zipball/44af6f3a2e2e04f2af46bcb302ad9600cba41c7d",
+                "reference": "44af6f3a2e2e04f2af46bcb302ad9600cba41c7d",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0.0",
+                "php": "^7.1.0"
+            },
+            "require-dev": {
+                "composer/composer": "^1.6.3",
+                "doctrine/coding-standard": "^5.0.1",
+                "ext-zip": "*",
+                "infection/infection": "^0.7.1",
+                "phpunit/phpunit": "^7.5.17"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "PackageVersions\\Installer",
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PackageVersions\\": "src/PackageVersions"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Pivetta",
+                    "email": "ocramius@gmail.com"
+                }
+            ],
+            "description": "Composer plugin that provides efficient querying for installed package versions (no runtime IO)",
+            "time": "2019-11-15T16:17:10+00:00"
+        }
+    ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
