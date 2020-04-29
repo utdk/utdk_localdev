@@ -2,7 +2,7 @@
     "name": "utexas/utdk_localdev",
     "description": "The local development environment for UTDK.",
     "type": "utexas-development",
-    "require-dev": {
+    "require": {
         "behat/behat": "3.*",
         "behat/mink": "^1.7",
         "behat/mink-extension": "^2.2",
