@@ -16,10 +16,40 @@
   - `test <directory/file>`: run PHPUnit Functional tests in series, using standard PHP command parameters
   - `test-js <directory/file>`: run PHPUnit FunctionalJS tests in series, using standard PHP command parameters
   - `paratest-functional <directory/file>`: run PHPUnit Functional tests in parallel, using standard PHP command parameters
-  - `paratest-js <directory/file>`: run PHPUnit FunctionalJS tests in parallel, using standard PHP command parameters 
+  - `paratest-js <directory/file>`: run PHPUnit FunctionalJS tests in parallel, using standard PHP command parameters
 * More details on the commands can be found in the command files themselves - `.docksal/commands/test` and `.docksal/commands/test-js`. They both function largely the same way, but are configured to use corresponding `phpunit.xml` files located in `.docksal/drupal/testing` folder.
 * To ensure proper functionality, the `SIMPLETEST_BASE_URL` has to be updated to match the Docksal virtual host name. In most cases, this is taken care of when running `fin test-init`. As part of this command, it will update the appropriate `phpunit.xml` files automatically. This does a basic find and replace operation via perl, replacing the default `web` string with the Docksal variable `${VIRTUAL_HOST}`.
 * If the command doesn't work for you for some reason, you can manually update the `SIMPLETEST_BASE_URL` in the included `phpunit.xml` and `phpunit-js.xml`, located in `.docksal/drupal/testing/`. In Docksal, the name of your host matches the name of your folder. So, if you cloned this into a folder called `drupalin`, your Docksal based URL will be `http://drupalin.docksal`, and this is what your `SIMPLETEST_BASE_URL` should be set to.
+
+## Deprecation checking
+Run the following command to run Drupal 9 compatibility checks with [drupal-check](https://github.com/mglaman/drupal-check):
+
+```
+vendor/bin/drupal-check path/to/directory
+```
+
+## Deprecation fixes via Drupal Rector
+
+Run the following commands to attempt to automate Drupal 9 compatibility fixes with [drupal-rector](https://github.com/palantirnet/drupal-rector)
+
+0. Add the configuration file to the project root
+
+```
+cp vendor/palantirnet/drupal-rector/rector-config-web-dir.yml rector.yml
+```
+
+1. Analyze the code
+
+```
+vendor/bin/rector process web/modules/contrib/[YOUR_MODULE] --dry-run
+```
+
+2. Apply suggested changes
+
+```
+vendor/bin/rector process web/modules/contrib/[YOUR_MODULE]
+```
+
 
 ## Setting different versions of PHP
 * The `docksal.env` file contains some sample definitions of the different pieces of the stack. `WEB_IMAGE`, `DB_IMAGE`, and `CLI_IMAGE` can be modified to use different Docker images from the Docksal repo. The PHP version is determined from the `CLI_IMAGE`. You can modify the value to a new version, and run `fin up` to refresh the containers. Docksal will detect the changes, download the new Docker image if it doesn't exist in your cache, and reload your container running the new PHP version. So for example, to run on PHP 7.3, you could update the `CLI_IMAGE` to be `CLI_IMAGE='docksal/cli:2.6-php7.3'`, and run `fin up`, and now the CLI container is running on PHP 7.3. And to clarify, the CLI container is determining what version of PHP that Drupal will be using, since Drupal is in essence running on this container, in orchestration with the `WEB_IMAGE` and `DB_IMAGE` containers, which are networked together automatically behind the scenes. [See more information about this from the Docksal site](https://docs.docksal.io/service/cli/settings/).
