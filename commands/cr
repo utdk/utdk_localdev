@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+#: exec_target = cli
+
+# PROJECT_ROOT and DOCROOT are set as env variables in cli
+SITE_DIRECTORY="default"
+DOCROOT_PATH="${PROJECT_ROOT}/${DOCROOT}"
+SITEDIR_PATH="${DOCROOT_PATH}/sites/${SITE_DIRECTORY}"
+
+mysql --user="$MYSQL_USER" --database="$MYSQL_DATABASE" --password="$MYSQL_PASSWORD" -e "SHOW TABLES LIKE 'cache%'" | tail -n +2 | xargs -L1 -I% echo "TRUNCATE TABLE %;" > cache-tables.txt
+value=`cat cache-tables.txt`
+rm cache-tables.txt
+mysql --user="user" --database="default" --password="user" -e "$value" >/dev/null
+rm -f ${SITEDIR_PATH}/files/css/*.css
+rm -f ${SITEDIR_PATH}/files/js/*.js
+rm -f ${SITEDIR_PATH}/files/css/*.css.gz
+rm -f ${SITEDIR_PATH}/files/js/*.js.gz
+echo "Cache rebuild complete."
