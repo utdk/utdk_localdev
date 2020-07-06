@@ -15,4 +15,5 @@ rm -f ${SITEDIR_PATH}/files/css/*.css
 rm -f ${SITEDIR_PATH}/files/js/*.js
 rm -f ${SITEDIR_PATH}/files/css/*.css.gz
 rm -f ${SITEDIR_PATH}/files/js/*.js.gz
+rm -rf ${SITEDIR_PATH}/files/php/twig/*
 echo "Cache rebuild complete."
