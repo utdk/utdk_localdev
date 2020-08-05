@@ -4,7 +4,7 @@
 # to print verbose output, and to stop if there is a failure.
 ## fin test can be used with any available PHPUnit parameters
 
-# fin paratest-js web/profiles/utexas/tests/src/FunctionalJavascript
+# fin paratest-js web/profiles/contrib/utexas/tests/src/FunctionalJavascript
 # will run all tests found in the given directory
 
 # fin paratest-js --filter=Office403Test
