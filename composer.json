@@ -16,7 +16,7 @@
         "drupal/entity_browser": "^2.0",
         "drupal/page_manager": "^4.0",
         "drupal/restui": "^1.0",
-        "drush/drush": "10.2.0",
+        "drush/drush": "~10",
         "drush-ops/behat-drush-endpoint": "^0.0.4",
         "friendsoftwig/twigcs": "^3.2",
         "jcalderonzumba/gastonjs": "^1.0.2",
