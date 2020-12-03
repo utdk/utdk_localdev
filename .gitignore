@@ -3,3 +3,4 @@ docksal-local.env
 docksal-local.yml
 etc/*
 /vendor/
+composer.lock
