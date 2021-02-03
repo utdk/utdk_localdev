@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="/var/www/web/core/tests/bootstrap.php" colors="true"
-         beStrictAboutTestsThatDoNotTestAnything="true"
-         beStrictAboutOutputDuringTests="true"
-         beStrictAboutChangesToGlobalState="true"
-         failOnWarning="true"
-         printerClass="\Drupal\Tests\Listeners\HtmlOutputPrinter"
-         cacheResult="false">
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="/var/www/web/core/tests/bootstrap.php" colors="true" beStrictAboutTestsThatDoNotTestAnything="true" beStrictAboutOutputDuringTests="true" beStrictAboutChangesToGlobalState="true" failOnWarning="true" printerClass="\Drupal\Tests\Listeners\HtmlOutputPrinter" cacheResult="false" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+  <coverage>
+    <include>
+      <directory>/var/www/web/core/includes</directory>
+      <directory>/var/www/web/core/lib</directory>
+      <directory>/var/www/web/core/modules</directory>
+      <directory>/var/www/web/modules</directory>
+      <directory>/var/www/web/sites</directory>
+    </include>
+  </coverage>
   <php>
     <!-- Set error reporting to E_ALL. -->
     <ini name="error_reporting" value="32767"/>
@@ -14,8 +17,8 @@
     <!-- Example SIMPLETEST_BASE_URL value: http://localhost -->
     <env name="DTT_BASE_URL" value="http://"/>
     <env name="DTT_API_URL" value="http://localhost:9222"/>
-    <env name="DTT_MINK_DRIVER_ARGS" value='["chrome", {"browserName":"chrome","chromeOptions":{"args":["--disable-gpu","--headless"]}}, "http://browser:4444/wd/hub"]' />
-    <env name="SIMPLETEST_BASE_URL" value="http://web"/>
+    <env name="DTT_MINK_DRIVER_ARGS" value="[&quot;chrome&quot;, {&quot;browserName&quot;:&quot;chrome&quot;,&quot;chromeOptions&quot;:{&quot;args&quot;:[&quot;--disable-gpu&quot;,&quot;--headless&quot;]}}, &quot;http://browser:4444/wd/hub&quot;]"/>
+    <env name="SIMPLETEST_BASE_URL" value="http://utdk-scaffold.docksal"/>
     <!-- Example SIMPLETEST_DB value: mysql://username:password@localhost/databasename#table_prefix -->
     <env name="SIMPLETEST_DB" value="mysql://user:user@db/default"/>
     <!-- Example BROWSERTEST_OUTPUT_DIRECTORY value: /path/to/webroot/sites/simpletest/browser_output -->
@@ -39,20 +42,20 @@
       <file>/var/www/web/core/tests/TestSuites/FunctionalJavascriptTestSuite.php</file>
     </testsuite>
     <testsuite name="existing-site">
-        <!-- This assumes tests are namespaced as
+      <!-- This assumes tests are namespaced as
              `\Drupal\Tests\custom_profile_foo\ExistingSite`. -->
-        <directory>/var/www/web/modules/custom/*/tests/src/ExistingSite</directory>
-        <directory>/var/www/.docksal/drupal/testing/tests/src/ExistingSite</directory>
-        <!--<directory>./web/profiles/custom/*/tests/src/ExistingSite</directory>-->
+      <directory>/var/www/web/modules/custom/*/tests/src/ExistingSite</directory>
+      <directory>/var/www/.docksal/drupal/testing/tests/src/ExistingSite</directory>
+      <!--<directory>./web/profiles/custom/*/tests/src/ExistingSite</directory>-->
     </testsuite>
     <testsuite name="existing-site-javascript">
-        <!-- This assumes tests are namespaced as
+      <!-- This assumes tests are namespaced as
              `\Drupal\Tests\custom_module_foo\ExistingSiteJavascript`. -->
-        <directory>/var/www/web/modules/custom/*/tests/src/ExistingSiteJavascript</directory>
-        <directory>/var/www/.docksal/drupal/testing/tests/src/ExistingSiteJavascript</directory>
-        <!-- This assumes tests are namespaced as
+      <directory>/var/www/web/modules/custom/*/tests/src/ExistingSiteJavascript</directory>
+      <directory>/var/www/.docksal/drupal/testing/tests/src/ExistingSiteJavascript</directory>
+      <!-- This assumes tests are namespaced as
              `\Drupal\Tests\custom_profile_foo\ExistingSiteJavascript`. -->
-        <!--<directory>./web/profiles/custom/*/tests/src/ExistingSiteJavascript</directory>-->
+      <!--<directory>./web/profiles/custom/*/tests/src/ExistingSiteJavascript</directory>-->
     </testsuite>
   </testsuites>
   <listeners>
@@ -63,13 +66,4 @@
     </listener>
   </listeners>
   <!-- Filter for coverage reports. -->
-  <filter>
-    <whitelist>
-      <directory>/var/www/web/core/includes</directory>
-      <directory>/var/www/web/core/lib</directory>
-      <directory>/var/www/web/core/modules</directory>
-      <directory>/var/www/web/modules</directory>
-      <directory>/var/www/web/sites</directory>
-     </whitelist>
-  </filter>
 </phpunit>
