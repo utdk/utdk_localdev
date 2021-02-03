@@ -19,8 +19,8 @@
     <env name="SIMPLETEST_DB" value="mysql://user:user@db/default"/>
     <!-- Example BROWSERTEST_OUTPUT_DIRECTORY value: /path/to/webroot/sites/simpletest/browser_output -->
     <env name="BROWSERTEST_OUTPUT_DIRECTORY" value="/var/www/web/sites/simpletest/browser_output"/>
-    <env name="MINK_DRIVER_ARGS" value="[&quot;chrome&quot;, {&quot;browserName&quot;:&quot;chrome&quot;,&quot;chromeOptions&quot;:{&quot;args&quot;:[&quot;--disable-gpu&quot;,&quot;--headless&quot;]}}, &quot;http://browser:9515&quot;]"/>
-    <env name="MINK_DRIVER_ARGS_WEBDRIVER" value="[&quot;chrome&quot;, {&quot;browserName&quot;:&quot;chrome&quot;,&quot;chromeOptions&quot;:{&quot;args&quot;:[&quot;--disable-gpu&quot;,&quot;--headless&quot;]}}, &quot;http://browser:9515&quot;]"/>
+    <env name="MINK_DRIVER_ARGS" value='["chrome", {"browserName":"chrome","chromeOptions":{"args":["--disable-gpu","--headless"]}}, "http://browser:9515"]'/>
+    <env name="MINK_DRIVER_ARGS_WEBDRIVER" value='["chrome", {"browserName":"chrome","chromeOptions":{"args":["--disable-gpu","--headless"]}}, "http://browser:9515"]'/>
     <env name="MINK_DRIVER_CLASS" value="Drupal\FunctionalJavascriptTests\DrupalSelenium2Driver"/>
   </php>
   <testsuites>
