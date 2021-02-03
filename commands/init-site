@@ -3,8 +3,9 @@
 #: exec_target = cli
 
 ## Initialize/reinstall site
-##
-## Usage: fin init-site
+## Usage: fin init-site [--wcs]
+## Parameters:
+## --wcs Set default site email address
 
 # Include helper functions
 . $(dirname "$0")/helper-functions
@@ -40,7 +41,7 @@ check_email ()
   fi
   if [ -z "$email" ]; then
     read -p "Enter email address for initial account: " user_supplied_email
-    email=${user_supplied_email} 
+    email=${user_supplied_email}
   fi
 }
 
