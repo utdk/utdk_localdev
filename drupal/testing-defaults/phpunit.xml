@@ -18,7 +18,7 @@
     <env name="DTT_BASE_URL" value="http://"/>
     <env name="DTT_API_URL" value="http://localhost:9222"/>
     <env name="DTT_MINK_DRIVER_ARGS" value='["chrome", {"browserName":"chrome","chromeOptions":{"args":["--disable-gpu","--headless"]}}, "http://browser:4444/wd/hub"]'/>
-    <env name="SIMPLETEST_BASE_URL" value="http://utdk-scaffold.docksal"/>
+    <env name="SIMPLETEST_BASE_URL" value="http://web"/>
     <!-- Example SIMPLETEST_DB value: mysql://username:password@localhost/databasename#table_prefix -->
     <env name="SIMPLETEST_DB" value="mysql://user:user@db/default"/>
     <!-- Example BROWSERTEST_OUTPUT_DIRECTORY value: /path/to/webroot/sites/simpletest/browser_output -->
