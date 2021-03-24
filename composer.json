@@ -1,7 +1,17 @@
 {
     "name": "utexas/utdk_localdev",
-    "description": "The local development environment for UTDK.",
+    "description": "Docksal-based local development tooling for the UT Drupal Kit.",
     "type": "utexas-development",
+    "keywords": ["Drupal", "UT Drupal Kit"],
+    "license": ["GPL-2.0-or-later"],
+    "authors": [
+      {
+        "name": "Web Content Management Solutions Team, Information Technology Services, The University of Texas at Austin",
+        "email": "drupal-kit-support@utlists.utexas.edu",
+        "homepage": "https://drupalkit.its.utexas.edu",
+        "role": "Developer"
+      }
+    ],
     "require": {
         "brianium/paratest": "^6.2",
         "drupal/coder": "^8.3",
