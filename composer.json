@@ -26,6 +26,7 @@
         "jcalderonzumba/mink-phantomjs-driver": "^0.3.1",
         "mglaman/drupal-check": "^1.1",
         "mikey179/vfsstream": "^1.6",
+        "oomphinc/composer-installers-extender": "^2",
         "palantirnet/drupal-rector": "dev-master",
         "phpspec/prophecy-phpunit": "^2.0",
         "phpunit/phpunit": "^8.4.1 || ^9",
