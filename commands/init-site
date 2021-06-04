@@ -10,6 +10,10 @@
 # Include helper functions
 . $(dirname "$0")/helper-functions
 
+## Settings
+# PROJECT_ROOT and DOCROOT are set as env variables in cli
+DOCROOT_PATH="${PROJECT_ROOT}/${DOCROOT}"
+
 # Abort if anything fails
 set -e
 
