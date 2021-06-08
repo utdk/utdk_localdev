@@ -12,8 +12,8 @@ labels: 'release'
     - (script available at [utdk3_release_packaging](https://github.austin.utexas.edu/eis1-wcs/utdk3_release_packaging/blob/main/releases/utdk_contrib_updater.sh))
 
 ```
-git clone git@github.austin.utexas.edu:eis1-wcs/utprof.git
-cd utprof
+git clone git@github.austin.utexas.edu:eis1-wcs/utdk_localdev.git
+cd utdk_localdev
 composer config repositories.drupal composer https://packages.drupal.org/8
 composer install
 composer outdated --direct
@@ -22,7 +22,6 @@ composer outdated --direct
 ## Release pull request tasks
 
 - [ ] Create release branch from develop, e.g. `release/3.0.0`
-- [ ] Bump version number in `utprof.info.yml`
 - [ ] Open PR for release branch
 
 ## Release completion tasks
@@ -37,5 +36,5 @@ git tag 3.0.0
 git push origin develop && git push origin master && git push origin git tag 3.0.0
 ```
 
-- [ ] [Create a new release](https://github.austin.utexas.edu/eis1-wcs/utprof/releases/new) (version number and release title should be the same (e.g., `3.0.0`)
-- [ ] Use [gren](https://github.com/github-tools/github-release-notes) generate the release notes `gren release --api-url=https://github.austin.utexas.edu/api/v3 --repo=utprof --username=eis1-wcs --ignore-issues-with="wontfix,release,duplicate,invalid" --override`
+- [ ] [Create a new release](https://github.austin.utexas.edu/eis1-wcs/utdk_localdev/releases/new) (version number and release title should be the same (e.g., `3.0.0`)
+- [ ] Use [gren](https://github.com/github-tools/github-release-notes) generate the release notes `gren release --api-url=https://github.austin.utexas.edu/api/v3 --repo=utdk_localdev --username=eis1-wcs --ignore-issues-with="wontfix,release,duplicate,invalid" --override`
