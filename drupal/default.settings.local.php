@@ -49,12 +49,6 @@ $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml'
 $config['system.logging']['error_level'] = 'verbose';
 
 /**
- * Disable CSS and JS aggregation.
- */
-$config['system.performance']['css']['preprocess'] = FALSE;
-$config['system.performance']['js']['preprocess'] = FALSE;
-
-/**
  * Disable the render cache.
  *
  * Note: you should test with the render cache enabled, to ensure the correct
