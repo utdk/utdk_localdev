@@ -1,9 +1,8 @@
 # UT Drupal Kit Local Development Tooling
 
-This repository contains Docksal-based tooling for local development of the UT Drupal Kit.
+This repository contains Docksal-based tooling for internal development of the UT Drupal Kit. It should **not** be used for local development with an individual Drupal Kit site.
 
-Its primary use and design is for internal development by ITS. Full documentation:
+For local development on an individual Drupal Kit site, use one of the options listed at https://drupalkit.its.utexas.edu/docs/getting_started/local_development.html
 
-https://drupalkit.its.utexas.edu/docs/getting_started/local_development.html
-
-https://github.austin.utexas.edu/eis1-wcs/utdk_localdev/wiki
+## For ITS
+See https://github.austin.utexas.edu/eis1-wcs/utdk_localdev/wiki for usage.
