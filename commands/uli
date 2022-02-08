@@ -2,4 +2,5 @@
 
 #: exec_target = cli
 
-drush uli --uri=${VIRTUAL_HOST}
+drush uli --uri=${VIRTUAL_HOST} | sed "s/http\:/https:/"
+# The sed here is based on https://github.com/docksal/addons/blob/master/uli/uli#L41
