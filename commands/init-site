@@ -57,4 +57,3 @@ source="$1"
 check_email
 time site_install
 echo "PROJECT URL: https://${VIRTUAL_HOST}"
-say "Installation complete"
