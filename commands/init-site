@@ -56,4 +56,4 @@ echo "******** Install UT Drupal Kit ********"
 source="$1"
 check_email
 time site_install
-echo "PROJECT URL: http://${VIRTUAL_HOST}"
+echo "PROJECT URL: https://${VIRTUAL_HOST}"
