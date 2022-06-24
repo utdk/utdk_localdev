@@ -1,12 +1,15 @@
 version: "2.1"
 services:
-  # Chromedriver    
+  # Chromedriver
   browser:
     image: drupalci/webdriver-chromedriver:production
     ulimits:
       core:
         soft: -1
         hard: -1
+    ports:
+      - "4444:4444"
+      - "9515:9515"
     cap_add:
       - SYS_ADMIN
     volumes:
@@ -17,6 +20,7 @@ services:
       - "--log-path=/tmp/chromedriver.log"
       - "--verbose"
       - "--whitelisted-ips="
+      - "--allowed-origins=*"
     dns:
       - ${DOCKSAL_DNS1}
       - ${DOCKSAL_DNS2}
