@@ -13,7 +13,6 @@
       }
     ],
     "require": {
-        "brianium/paratest": "^7",
         "drupal/core-dev": "^10",
         "drupal/devel": "^5",
         "drupal/drupal-extension": "^5",
