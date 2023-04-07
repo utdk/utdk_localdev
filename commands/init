@@ -69,6 +69,11 @@ echo    # move to a new line
 fix_permissions
 init_settings
 
+echo "Adding SSL support..."
+fin addon install mkcert -g
+fin mkcert create
+fin system reset vhost-proxy
+
 echo-green "Containers are up and refreshed, and VS Code is configured for settings and XDebug!";
 
 #-------------------------- END: Execution --------------------------------
