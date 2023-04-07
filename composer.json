@@ -23,7 +23,6 @@
         "drush/drush": "^11 || ^12",
         "drush-ops/behat-drush-endpoint": "^9",
         "friendsoftwig/twigcs": "^6",
-        "jcalderonzumba/mink-phantomjs-driver": "^0.3",
         "mglaman/drupal-check": "^1",
         "oomphinc/composer-installers-extender": "^2",
         "phpspec/prophecy-phpunit": "^2",
