@@ -133,6 +133,9 @@ $databases['default']['default'] = array (
   'password' => 'user',
   'host' => 'db',
   'driver' => 'mysql',
+  'init_commands' => [
+    'isolation_level' => 'SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED',
+  ],
 );
 
 // Workaround for permission issues with NFS shares
