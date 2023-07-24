@@ -8,9 +8,6 @@
 # Copy over defaults
 cp -r ./.docksal/drupal/testing-defaults ./.docksal/drupal/testing
 
-# Copy menu_block_test.info.yml patched file to module dir
-cp -r ./.docksal/drupal/patched/menu_block_test.info.yml ./web/modules/contrib/menu_block/tests/modules/menu_block_test/menu_block_test.info.yml
-
 # Create folder for simpletest snapshots
 create_dir "${PROJECT_ROOT}/${DOCROOT}/sites/simpletest"
 create_dir "${PROJECT_ROOT}/${DOCROOT}/sites/simpletest/browser_output"
