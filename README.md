@@ -25,6 +25,7 @@ mkcert -install
 
 ## Running tests
 * For first time setup, run `fin test-init`. This will copy over the default files from the `.docksal/drupal/testing-defaults` folder, and update them to match your current Docksal virtual host.
+* Before running tests confirm the checkbox in Docker settings > Features in development (tab) > Use Rosetta for x86/amd64 emulation on Apple Silicon is checked and the "Apply and restart" button has been clicked. (and confirm the "Virutalization Framework" is enabled as per the help text)
 * There are 5 commands to run testing:
   - `run-tests`: run the entire UTexas suite of tests using parallel testing
   - `test <directory/file>`: run PHPUnit Functional tests in series, using standard PHP command parameters
